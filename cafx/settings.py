@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'rest_framework_simplejwt',
+    'rest_framework_simplejwt.token_blacklist',
+    'drf_spectacular',
     'corsheaders',
     'users',
 ]
@@ -171,10 +173,13 @@ REST_FRAMEWORK = {
 }
 
 SPECTACULAR_SETTINGS = {
-    "TITLE": "Showmeelove API",
+    "TITLE": "Cafx API",
     "DESCRIPTION": "This API just contains basic routes based on the schema",
     "VERSION": "1.0.0",
     "SERVE_INCLUDE_SCHEMA": False,  # Optional: Prevent schema serving with the API
+     'SWAGGER_UI_SETTINGS': {
+        'persistAuthorization': True,
+    },
 }
 
 CORS_ALLOWED_ORIGINS = [
